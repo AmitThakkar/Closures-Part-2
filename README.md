@@ -1,6 +1,6 @@
 In the previous blog on **closures**, we had seen some of the basic concepts related to closures, now it is time to see things with deeper outlook.
 
-** "Closures in JavaScript" ** had an example through which we had seen scope chaining, I hope that you must have noticed that it was also a perfect example of closure.
+"Closures in JavaScript" had an example through which we had seen scope chaining, I hope that you must have noticed that it was also a perfect example of closure.
 
 I have again copied that code here:
 
