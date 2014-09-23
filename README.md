@@ -75,8 +75,7 @@ Function incrementer is called and '5' is passed to it.Function 'calculate' retu
 
 At times many books while giving explanation for the above example states that updated value of 'param' got printed because function maintains a reference to the scope where it is defined but this is wrong. Let us just modify the previous code a little bit.
 
-``
-
+```JavaScript
 function newIncrementer(param2) {
     var newCalculate = function () {
         return param2;
@@ -85,7 +84,7 @@ function newIncrementer(param2) {
     param2++;
 }
 
-``
+```
 O/P would be 5 in this case , since what **inner function** 'newCalculate' had was the snapshot of the scope of the **outer function** and not the reference to the variables. But in case of **outer function** or **inner function** or whatever function it is, it maintains a reference to the **global scope**. Please keep in mind the points given below:
 
 1. A function keeps the snapshot of the outer function when it is returned by the outer function.
