@@ -48,7 +48,7 @@ Let us see a diagrammatic representation of the above code:
 
 ![output.png](https://raw.githubusercontent.com/namita1990/Closures-Part-2/master/Family_Example_Closures.png)
 
-To move further, I would like to share that recently I came across a line : ** "Every function can be considered closure!" **
+To move further, I would like to share that recently I came across a line : "Every function can be considered closure!"
 
 Well Really?? Then How??
 
