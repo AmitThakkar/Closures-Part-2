@@ -2,7 +2,7 @@ In the previous blog on **closures**, we had seen some of the basic concepts rel
 
 "Closures in JavaScript" had an example through which we had seen scope chaining, I hope that you must have noticed that it was also a perfect example of closure.
 
-I have again copied that code here:
+I have again copied that code here :
 
 ```JavaScript
 var grandFatherName = "John";
