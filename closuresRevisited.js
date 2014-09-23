@@ -41,8 +41,7 @@ function counting() {
         arr[counter] = function () {
             return counter;
         }
-    }
-    ;
+    };
     return arr;
 }
 var arr = counting();
