@@ -42,7 +42,11 @@ father();
 console.log(family());
 
 ```
-In the above code we have defined a **global variable** 'family' and assigned function 'child' to it. The output would be same as the output of the first snippet. Let us see a diagrammatic representation of the above code:
+In the above code we have defined a **global variable** 'family' and assigned function 'child' to it. The output would be same as the output of the first snippet.
+
+Let us see a diagrammatic representation of the above code:
+
+![output.png](https://raw.githubusercontent.com/namita1990/Closures-Part-2/master/Family_Example_Closures.png)
 
 To move further, I would like to share that recently I came across a line : ** "Every function can be considered closure!" **
 
