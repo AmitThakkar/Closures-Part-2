@@ -1,58 +1,58 @@
-In the previous blog on **closures**, we had seen some of the basic concepts related to closures, now it is time to see things with deeper outlook.
+#Closures in JavaScript - Part 2
 
-"Closures in JavaScript" had an example through which we had seen scope chaining, I hope that you must have noticed that it was also a perfect example of closure.
+This repository contains **JavaScript Closure** Part 2 Demo.
+
+In the previous blog on **[closures](https://github.com/namita1990/Closures)**, we had seen some of the basic concepts related to **closures**, now it is time to see things with deeper outlook.
+
+**Closures in JavaScript** had an example through which we had seen **scope** chaining, I hope that you must have noticed that it was also a perfect example of **closure**.
 
 I have again copied that code here :
 
-```JavaScript
+```javascript
 var grandFatherName = "John";
 function father() {
     var fatherName = "Devis";
-
     function child() {
         var childName = "Tom";
         var description = "My name is" + childName + " ,my grandfather is " + grandfatherName + " and my father is " + fatherName;
         return description;
     }
-
     return child();
 }
 console.log(father());
-
 ```
+
 Here, we had seen that **inner function** 'child' was getting returned by **outer function** 'father'. Now, other way to do this is by assigning the **inner function** to **global variable**.
 
 See the slightly tweaked code below:
 
-```JavaScript
+```javascript
 var family;
 var grandFatherName = "John";
 function father() {
     var fatherName = "Devis";
-
     var child = function() {
         var childName = "Tom";
         var description = "My name is" + childName + " ,my grandfather is " + grandFatherName + " and my father is " + fatherName;
         return description;
     };
-
     family = child;
 }
 father();
 console.log(family());
-
 ```
-In the above code we have defined a **global variable** 'family' and assigned function 'child' to it. The output would be same as the output of the first snippet.
+
+In the above code we have defined a **global variable** 'family' and assigned **function** 'child' to it. The output would be same as the output of the first snippet.
 
 Let us see a diagrammatic representation of the above code:
 
 ![output.png](https://raw.githubusercontent.com/namita1990/Closures-Part-2/master/Family_Example_Closures.png)
 
-To move further, I would like to share that recently I came across a line : "Every function can be considered closure!"
+To move further, I would like to share that recently I came across a line : "Every function can be considered **closure**."
 
 Well Really?? Then How??
 
-Well the above line holds true as every function has a link to the environment in which it is created. A **closure** is created when a function keeps a 'link' to its **parent scope** even after the parent has returned. Every function is a **closure** since it maintains a 'secret link' to the **global space** in which it created and this 'secret link' is maintained till eternity!
+Well the above line holds true as every **function** has a link to the environment in which it is created. A **closure** is created when a function keeps a 'link' to its **parent scope** even after the parent has returned. Every **function** is a **closure** since it maintains a 'secret link' to the **global space** in which it created and this 'secret link' is maintained till eternity!
 
 Consider the word 'link' here as a **snapshot** while 'secret link' as **reference**. 
 
