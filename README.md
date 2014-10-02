@@ -4,9 +4,7 @@ This repository contains **JavaScript Closure** Part 2 Demo.
 
 In the previous blog on **[closures](https://github.com/namita1990/Closures)**, we had seen some of the basic concepts related to **closures**, now it is time to see things with deeper outlook.
 
-**Closures in JavaScript** had an example through which we had seen **scope** chaining, I hope that you must have noticed that it was also a perfect example of **closure**.
-
-I have again copied that code here :
+**Closures in JavaScript** had an example through which we had seen **scope** chaining, See the modified code here:
 
 ```javascript
 var grandFatherName = "John";
@@ -17,9 +15,10 @@ function father() {
         var description = "My name is" + childName + " ,my grandfather is " + grandfatherName + " and my father is " + fatherName;
         return description;
     }
-    return child();
+    return child;
 }
-console.log(father());
+var tom = father();
+console.log(tom());
 ```
 
 Here, we had seen that **inner function** 'child' was getting returned by **outer function** 'father'. Now, other way to do this is by assigning the **inner function** to **global variable**.
@@ -27,7 +26,7 @@ Here, we had seen that **inner function** 'child' was getting returned by **oute
 See the slightly tweaked code below:
 
 ```javascript
-var family;
+var tom;
 var grandFatherName = "John";
 function father() {
     var fatherName = "Devis";
@@ -36,13 +35,13 @@ function father() {
         var description = "My name is" + childName + " ,my grandfather is " + grandFatherName + " and my father is " + fatherName;
         return description;
     };
-    family = child;
+    tom = child;
 }
 father();
 console.log(family());
 ```
 
-In the above code we have defined a **global variable** 'family' and assigned **function** 'child' to it. The output would be same as the output of the first snippet.
+In the above code we have defined a **global variable** 'tom' and assigned **function** 'child' to it. The output would be same as the output of the first snippet.
 
 Let us see a diagrammatic representation of the above code:
 
