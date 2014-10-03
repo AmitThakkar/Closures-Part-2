@@ -74,7 +74,7 @@ var cal = incrementer(5);
 console.log(cal()); // 6
 ```
 
-We called **Function** incrementer with value '5' and it returns calculate **function**. **Function** 'calculate' returns the value of param and then value of param is incremented to 6.
+We called **Function** incrementer with value '5'. **Function** incrementer increments the value of param and returns the **function** calculate. **Function** calculate is defined inside the **function** incrementer and it returns the value of param.
 
 At times many books while giving explanation for the above example states that updated value of 'param' got printed because function maintains a reference to the scope where it is defined but this is wrong. Let us just modify the previous code a little bit.
 
@@ -110,7 +110,7 @@ var arr = counting();
 
 Let's check the output:
 
-```JavaScript
+```javascript
 arr[0]();
 ```
 
@@ -118,7 +118,7 @@ arr[0]();
 
 Let's check again:
 
-```JavaScript
+```javascript
 arr[3]();
 ```
 
@@ -126,7 +126,7 @@ arr[3]();
 
 Once again!!
 
-```JavaScript
+```javascript
 arr[4]();
 ```
 
@@ -135,7 +135,7 @@ arr[4]();
 So it's always 5!!
 
 All 5 functions return the same value, because they keep link to the environment in which they were created! Confused ??
-Well, as per the first thumb rule written above that snapshot of the outer function is taken when they return inner function and not when they are defined.
+Well, as per the first thumb rule written above, snapshot of the outer function is taken when it returns inner function and not when inner function is defined.
 
 The value of year changed to '5' at the end of loop. The inner function returned this updated value of 'year' to array 'arr' , hence the result.
 
@@ -145,7 +145,7 @@ Didn't you read between the lines?
 
 Yes, you are right.....we need to create a situation where snapshot is taken by the closure and added to the array. This situation can be created as given here:
 
-```JavaScript
+```javascript
 function improvedCounting() {
     function localize(x) {
         return function () {
@@ -160,7 +160,6 @@ function improvedCounting() {
     return newArr;
 };
 var newArr = improvedCounting();
-
 ```
 What has been done in above code is that we have tried to localize the value of the parameter passed.
 
