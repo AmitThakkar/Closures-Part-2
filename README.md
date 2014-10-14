@@ -2,9 +2,9 @@
 
 This repository contains **JavaScript Closure** Part 2 Demo.
 
-In the previous blog on **[closures](https://github.com/namita1990/Closures)**, we had seen some of the basic concepts related to **closures**, now it is time to see things with deeper outlook.
+In the previous blog on **[closures](https://github.com/NamitaMalik/Closures)**, we had seen some of the basic concepts related to **closures**, now it is time to see things with deeper outlook.
 
-**[Closures in JavaScript](https://github.com/namita1990/Closures)** had an example through which we had seen **scope** chaining, See the modified code here:
+**[Closures in JavaScript](https://github.com/NamitaMalik/Closures)** had an example through which we had seen **scope** chaining, See the modified code here:
 
 ```javascript
 var grandFatherName = "John";
@@ -45,7 +45,7 @@ In the above code we have defined a **global variable** 'tom' and assigned **fun
 
 Let us see a diagrammatic representation of the above code:
 
-![output.png](https://raw.githubusercontent.com/namita1990/Closures-Part-2/master/Family_Example_Closures.png)
+![output.png](https://raw.githubusercontent.com/NamitaMalik/Closures-Part-2/master/Family_Example_Closures.png)
 
 To move further, I would like to share that recently I came across a line : "Every function can be considered **closure**."
 
