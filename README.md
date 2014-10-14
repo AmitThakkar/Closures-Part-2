@@ -74,20 +74,9 @@ var cal = incrementer(5);
 console.log(cal()); // 6
 ```
 
-We called **Function** incrementer with value '5'. **Function** incrementer increments the value of param and returns the **function** calculate. **Function** calculate is defined inside the **function** incrementer and it returns the value of param.
+We called **Function** incrementer with value '5'. **Function** incrementer first defined the calculate function which return the value of param then increments the value of param by one and at last returns the **function** calculate. **Function** calculate is defined inside the **function** incrementer so when it returns from parent/incrementer **function**, it gets snapshot of parent/incrementer **function** with it.
 
-At times many books while giving explanation for the above example states that updated value of 'param' got printed because function maintains a reference to the scope where it is defined but this is wrong. Let us just modify the previous code a little bit.
-
-```javascript
-function newIncrementer(param2) {
-    var newCalculate = function () {
-        return param2;
-    };
-    return newCalculate;
-    param2++;
-}
-```
-O/P would be 5 in this case , since what **inner function** 'newCalculate' had was the snapshot of the scope of the **outer function** and not the reference to the variables. But in case of **outer function** or **inner function** or whatever function it is, it maintains a reference to the **global scope**. Please keep in mind the points given below:
+At times many books while giving explanation for the above example states that updated value of 'param' got printed because function maintains a reference to the scope where it is defined, reference is actually snapshot. But in case of **outer function** or **inner function** or whatever function it is, it maintains a reference to the **global scope**. Please keep in mind the points given below:
 
 1. A function keeps the snapshot of the outer function when it is returned by the outer function.
 
@@ -111,39 +100,33 @@ var arr = counting();
 Let's check the output:
 
 ```javascript
-arr[0]();
+console.log(arr[0]()); // 5
 ```
-
-5
 
 Let's check again:
 
 ```javascript
-arr[3]();
+console.log(arr[3]()); // 5
 ```
-
-5
 
 Once again!!
 
 ```javascript
-arr[4]();
+console.log(arr[4]()); // 5
 ```
-
-5
 
 So it's always 5!!
 
-All 5 functions return the same value, because they keep link to the environment in which they were created! Confused ??
+All 5 functions return the same value, because they keep link/reference to the environment in which they were created! Confused ??
 Well, as per the first thumb rule written above, snapshot of the outer function is taken when it returns inner function and not when inner function is defined.
 
-The value of year changed to '5' at the end of loop. The inner function returned this updated value of 'year' to array 'arr' , hence the result.
+The value of counter changed to '5' at the end of loop. The inner function returned this updated value of 'counter' to array 'arr', hence the result.
 
 Now, what is the solution to the above problem??
 
 Didn't you read between the lines?
 
-Yes, you are right.....we need to create a situation where snapshot is taken by the closure and added to the array. This situation can be created as given here:
+Yes, you are right..... We need to create a situation where snapshot is taken by the closure and added to the array. This situation can be created as given here:
 
 ```javascript
 function improvedCounting() {
@@ -152,7 +135,6 @@ function improvedCounting() {
             return x;
         }
     }
-
     var newArr = [], newCounter;
     for (newCounter = 0; newCounter < 5; newCounter++) {
         newArr[newCounter] = localize(newCounter);
@@ -161,6 +143,7 @@ function improvedCounting() {
 };
 var newArr = improvedCounting();
 ```
+
 What has been done in above code is that we have tried to localize the value of the parameter passed.
 
 When loop executes:
